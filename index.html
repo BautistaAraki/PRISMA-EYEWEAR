@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PRISMA EYEWEAR — Prototipo local de una tienda de anteojos de moda urbana con cristales de color. El color es actitud.">
+  <meta name="theme-color" content="#F4EEE7">
+  <title>PRISMA EYEWEAR — El color es actitud</title>
+
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <noscript>
+    <p class="noscript">Este prototipo necesita JavaScript para el menú, los filtros y el carrito.</p>
+  </noscript>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-box" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+
+      <a class="brand" href="#inicio" aria-label="PRISMA EYEWEAR — Ir al inicio">
+        <span class="brand-word">PRISMA</span>
+        <span class="brand-sub">EYEWEAR</span>
+      </a>
+
+      <div class="header-actions">
+        <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#coleccion">Colección</a></li>
+            <li><a href="#combos">Combos</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <a class="cart-button" href="carrito.html" aria-label="Ver carrito, 0 productos">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M6 8h12l-1 12H7L6 8Z"/>
+            <path d="M9 8V6a3 3 0 0 1 6 0v2"/>
+          </svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <picture class="hero-media">
+        <source media="(max-width: 700px)" srcset="assets/images/hero-mobile.svg">
+        <img
+          src="assets/images/hero-desktop.svg"
+          alt="Placeholder de foto de campaña con anteojos PRISMA. La fotografía real está pendiente."
+          width="1600"
+          height="900"
+          fetchpriority="high"
+        >
+      </picture>
+
+      <div class="container hero-content">
+        <p class="eyebrow">PRISMA EYEWEAR</p>
+        <h1 id="hero-title">EL COLOR<br>ES ACTITUD.</h1>
+        <p class="hero-subtitle">Diseño, actitud y una nueva forma de mirar.</p>
+        <a class="button button-dark hero-cta" href="#coleccion">
+          DESCUBRÍ LA COLECCIÓN
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section collection" id="coleccion" aria-labelledby="collection-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="collection-title">NUESTRA COLECCIÓN</h2>
+          <button class="text-link filter-reset" type="button" data-filter="todos">VER TODOS →</button>
+        </div>
+
+        <p class="filter-status" id="filter-status" role="status" aria-live="polite"></p>
+
+        <div class="product-grid">
+          <article class="product-card reveal" data-model="01" data-lens="amarillo">
+            <div class="product-media">
+              <img
+                src="assets/images/modelo-01.svg"
+                alt="Placeholder de Modelo 01 con armazón negro y cristal amarillo. Foto real pendiente."
+                width="800"
+                height="600"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-info">
+              <h3>MODELO 01</h3>
+              <p class="product-price">$49.000</p>
+              <ul class="swatches" aria-label="Cristales disponibles: amarillo, naranja y rojo">
+                <li><span class="swatch swatch--yellow" title="Amarillo"></span></li>
+                <li><span class="swatch swatch--orange" title="Naranja"></span></li>
+                <li><span class="swatch swatch--red" title="Rojo"></span></li>
+              </ul>
+              <a class="button button-outline" href="producto.html?modelo=01">VER DETALLES</a>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-model="02" data-lens="naranja">
+            <div class="product-media">
+              <img
+                src="assets/images/modelo-02.svg"
+                alt="Placeholder de Modelo 02 con armazón negro y cristal naranja. Foto real pendiente."
+                width="800"
+                height="600"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-info">
+              <h3>MODELO 02</h3>
+              <p class="product-price">$49.000</p>
+              <ul class="swatches" aria-label="Cristales disponibles: amarillo, naranja y rojo">
+                <li><span class="swatch swatch--yellow" title="Amarillo"></span></li>
+                <li><span class="swatch swatch--orange" title="Naranja"></span></li>
+                <li><span class="swatch swatch--red" title="Rojo"></span></li>
+              </ul>
+              <a class="button button-outline" href="producto.html?modelo=02">VER DETALLES</a>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-model="03" data-lens="rojo">
+            <div class="product-media">
+              <img
+                src="assets/images/modelo-03.svg"
+                alt="Placeholder de Modelo 03 con armazón negro y cristal rojo. Foto real pendiente."
+                width="800"
+                height="600"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-info">
+              <h3>MODELO 03</h3>
+              <p class="product-price">$49.000</p>
+              <ul class="swatches" aria-label="Cristales disponibles: amarillo, naranja y rojo">
+                <li><span class="swatch swatch--yellow" title="Amarillo"></span></li>
+                <li><span class="swatch swatch--orange" title="Naranja"></span></li>
+                <li><span class="swatch swatch--red" title="Rojo"></span></li>
+              </ul>
+              <a class="button button-outline" href="producto.html?modelo=03">VER DETALLES</a>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-model="04" data-lens="amarillo">
+            <div class="product-media">
+              <img
+                src="assets/images/modelo-04.svg"
+                alt="Placeholder de Modelo 04 con armazón azul y cristal amarillo. Foto real pendiente."
+                width="800"
+                height="600"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-info">
+              <h3>MODELO 04</h3>
+              <p class="product-price">$49.000</p>
+              <ul class="swatches" aria-label="Cristales disponibles: amarillo, naranja y rojo">
+                <li><span class="swatch swatch--yellow" title="Amarillo"></span></li>
+                <li><span class="swatch swatch--orange" title="Naranja"></span></li>
+                <li><span class="swatch swatch--red" title="Rojo"></span></li>
+              </ul>
+              <a class="button button-outline" href="producto.html?modelo=04">VER DETALLES</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="colors" id="colores" aria-labelledby="colors-title">
+      <div class="colors-media">
+        <img
+          src="assets/images/color-editorial.svg"
+          alt="Placeholder de foto editorial con cristales de color. Foto real pendiente."
+          width="1000"
+          height="800"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="colors-panel">
+        <p class="eyebrow eyebrow--light">ELEGÍ TU PERSPECTIVA</p>
+        <h2 id="colors-title">TRES COLORES.<br>INFINITAS ACTITUDES.</h2>
+        <p class="colors-copy">Filtrá la colección por el color del cristal.</p>
+
+        <div class="color-options" role="group" aria-label="Filtrar colección por color de cristal">
+          <button class="color-choice" type="button" data-filter="amarillo" aria-pressed="false" aria-label="Filtrar colección por cristal amarillo">
+            <span class="color-dot color-dot--yellow" aria-hidden="true"></span>
+            <span>AMARILLO</span>
+          </button>
+          <button class="color-choice" type="button" data-filter="naranja" aria-pressed="false" aria-label="Filtrar colección por cristal naranja">
+            <span class="color-dot color-dot--orange" aria-hidden="true"></span>
+            <span>NARANJA</span>
+          </button>
+          <button class="color-choice" type="button" data-filter="rojo" aria-pressed="false" aria-label="Filtrar colección por cristal rojo">
+            <span class="color-dot color-dot--red" aria-hidden="true"></span>
+            <span>ROJO</span>
+          </button>
+        </div>
+
+        <button class="text-link text-link--light color-reset" type="button" data-filter="todos">VER TODOS LOS MODELOS →</button>
+      </div>
+    </section>
+
+    <section class="section combos" id="combos" aria-labelledby="combos-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="combos-title">COMBOS</h2>
+          <p class="section-note">Precios en pesos argentinos.</p>
+        </div>
+
+        <div class="combo-grid">
+          <article class="combo-card combo-card--featured reveal" data-combo="1">
+            <p class="combo-label">1 ANTEOJO</p>
+            <p class="combo-price">$49.000</p>
+            <div class="combo-media combo-media--1">
+              <img src="assets/images/modelo-01.svg" alt="Modelo 01 de demostración con cristal amarillo" width="800" height="600" loading="lazy">
+            </div>
+            <button class="button button-outline combo-button" type="button" data-combo="1" data-price="49000" data-label="1 anteojo">ARMÁ TU COMBO →</button>
+          </article>
+
+          <article class="combo-card reveal" data-combo="2">
+            <p class="combo-label">2 ANTEOJOS</p>
+            <p class="combo-price">$79.000</p>
+            <div class="combo-media combo-media--2">
+              <img src="assets/images/modelo-01.svg" alt="Modelo 01 de demostración con cristal amarillo" width="800" height="600" loading="lazy">
+              <img src="assets/images/modelo-02.svg" alt="Modelo 02 de demostración con cristal naranja" width="800" height="600" loading="lazy">
+            </div>
+            <button class="button button-outline combo-button" type="button" data-combo="2" data-price="79000" data-label="2 anteojos">ARMÁ TU COMBO →</button>
+          </article>
+
+          <article class="combo-card reveal" data-combo="3">
+            <p class="combo-label">3 ANTEOJOS</p>
+            <p class="combo-price">$99.000</p>
+            <div class="combo-media combo-media--3">
+              <img src="assets/images/modelo-01.svg" alt="Modelo 01 de demostración con cristal amarillo" width="800" height="600" loading="lazy">
+              <img src="assets/images/modelo-02.svg" alt="Modelo 02 de demostración con cristal naranja" width="800" height="600" loading="lazy">
+              <img src="assets/images/modelo-03.svg" alt="Modelo 03 de demostración con cristal rojo" width="800" height="600" loading="lazy">
+            </div>
+            <button class="button button-outline combo-button" type="button" data-combo="3" data-price="99000" data-label="3 anteojos">ARMÁ TU COMBO →</button>
+          </article>
+        </div>
+
+        <p class="combo-note">Combiná modelos y colores. El precio se calcula según la cantidad de anteojos.</p>
+      </div>
+    </section>
+
+    <section class="section details" aria-labelledby="details-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="details-title">ESTILO EN CADA DETALLE</h2>
+        </div>
+
+        <div class="detail-grid">
+          <figure class="detail-card reveal">
+            <img src="assets/images/detalle-01.svg" alt="Placeholder de detalle de bisagra del armazón. Foto real pendiente." width="600" height="600" loading="lazy">
+            <figcaption>DISEÑO ATEMPORAL</figcaption>
+          </figure>
+          <figure class="detail-card reveal">
+            <img src="assets/images/detalle-02.svg" alt="Placeholder de detalle del cristal naranja. Foto real pendiente." width="600" height="600" loading="lazy">
+            <figcaption>CRISTALES DE COLOR</figcaption>
+          </figure>
+          <figure class="detail-card reveal">
+            <img src="assets/images/detalle-03.svg" alt="Placeholder de detalle de la patilla con el nombre PRISMA. Foto real pendiente." width="600" height="600" loading="lazy">
+            <figcaption>CALIDAD EN CADA DETALLE</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="nosotros" aria-labelledby="about-title">
+      <div class="about-media">
+        <img
+          src="assets/images/cierre-editorial.svg"
+          alt="Placeholder de foto editorial de cierre con anteojos de cristal amarillo. Foto real pendiente."
+          width="1200"
+          height="800"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="about-content">
+        <p class="eyebrow eyebrow--light">NOSOTROS</p>
+        <h2 id="about-title">MÁS QUE<br>ANTEOJOS.</h2>
+        <p>
+          PRISMA nace de una idea simple: usar el color como parte del estilo.
+          Creamos anteojos para quienes disfrutan expresarse a través de los detalles.
+          Diseños versátiles, combinaciones personales y una nueva forma de mirar.
+        </p>
+        <p class="about-signature">EL COLOR ES ACTITUD.</p>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-inner">
+        <div class="section-head section-head--stacked">
+          <h2 id="faq-title">PREGUNTAS FRECUENTES</h2>
+          <p class="section-note">Las respuestas se publican cuando estén confirmadas con el dueño.</p>
+        </div>
+
+        <div class="faq-list">
+          <details name="faq">
+            <summary>¿Cómo elijo el modelo, color de armazón y cristal?</summary>
+            <p>Respuesta pendiente de confirmación.</p>
+          </details>
+          <details name="faq">
+            <summary>¿Los anteojos se hacen a pedido? ¿Cuánto tarda la preparación?</summary>
+            <p>Respuesta pendiente de confirmación.</p>
+          </details>
+          <details name="faq">
+            <summary>¿Qué medidas tienen los armazones?</summary>
+            <p>Respuesta pendiente de confirmación.</p>
+          </details>
+          <details name="faq">
+            <summary>¿Qué características técnicas tienen los cristales?</summary>
+            <p>Respuesta pendiente de confirmación.</p>
+          </details>
+          <details name="faq">
+            <summary>¿Cómo se paga? ¿Qué métodos están disponibles?</summary>
+            <p>Respuesta pendiente de confirmación.</p>
+          </details>
+          <details name="faq">
+            <summary>¿A qué lugares hacen envíos? ¿Cuánto cuestan? ¿Hay retiro?</summary>
+            <p>Respuesta pendiente de confirmación.</p>
+          </details>
+          <details name="faq">
+            <summary>¿Cómo funcionan los combos y puedo mezclar modelos?</summary>
+            <p>Respuesta pendiente de confirmación.</p>
+          </details>
+          <details name="faq">
+            <summary>¿Cómo solicito cambios, devoluciones o ayuda con mi pedido?</summary>
+            <p>Respuesta pendiente de confirmación.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a class="brand brand--footer" href="#inicio" aria-label="PRISMA EYEWEAR — Ir al inicio">
+          <span class="brand-word">PRISMA</span>
+          <span class="brand-sub">EYEWEAR</span>
+        </a>
+        <p class="footer-tagline">EL COLOR ES ACTITUD.</p>
+        <p class="footer-disclaimer">Prototipo local de demostración. Las fotos, precios y datos comerciales están pendientes de confirmación.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Navegación del pie">
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#coleccion">Colección</a></li>
+          <li><a href="#combos">Combos</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3>Ayuda</h3>
+        <ul>
+          <li><a href="envios.html">Envíos</a> <span class="pending-badge">Pendiente</span></li>
+          <li><a href="cambios-y-devoluciones.html">Cambios y devoluciones</a> <span class="pending-badge">Pendiente</span></li>
+          <li><a href="privacidad.html">Privacidad</a> <span class="pending-badge">Pendiente</span></li>
+          <li><a href="terminos.html">Términos</a> <span class="pending-badge">Pendiente</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact" id="contacto">
+        <h3>Contacto</h3>
+        <ul>
+          <li><span class="footer-pending">Instagram <span class="pending-badge">Pendiente</span></span></li>
+          <li><span class="footer-pending">WhatsApp <span class="pending-badge">Pendiente</span></span></li>
+          <li><span class="footer-pending">Email <span class="pending-badge">Pendiente</span></span></li>
+        </ul>
+        <p class="footer-note">Los canales se confirman antes de publicar.</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> PRISMA EYEWEAR. Prototipo local.</p>
+      <a class="text-link text-link--light" href="#inicio">VOLVER ARRIBA ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ficha de producto de demostración de PRISMA EYEWEAR. Elegí armazón y color de cristal, y sumá el modelo al carrito demo.">
+  <meta name="theme-color" content="#F4EEE7">
+  <title>Ficha de producto — PRISMA EYEWEAR</title>
+
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="producto">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <noscript>
+    <p class="noscript">Este prototipo necesita JavaScript para mostrar el producto, las variantes y el carrito.</p>
+  </noscript>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-box" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+
+      <a class="brand" href="index.html" aria-label="PRISMA EYEWEAR — Ir al inicio">
+        <span class="brand-word">PRISMA</span>
+        <span class="brand-sub">EYEWEAR</span>
+      </a>
+
+      <div class="header-actions">
+        <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+          <ul>
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#coleccion">Colección</a></li>
+            <li><a href="index.html#combos">Combos</a></li>
+            <li><a href="index.html#nosotros">Nosotros</a></li>
+            <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <a class="cart-button" href="carrito.html" aria-label="Ver carrito, 0 productos">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M6 8h12l-1 12H7L6 8Z"/>
+            <path d="M9 8V6a3 3 0 0 1 6 0v2"/>
+          </svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido" class="product-main">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Miga de pan">
+        <a href="index.html">Inicio</a>
+        <span aria-hidden="true">/</span>
+        <a href="index.html#coleccion">Colección</a>
+        <span aria-hidden="true">/</span>
+        <span id="breadcrumb-model" aria-current="page">Modelo 01</span>
+      </nav>
+
+      <div class="product-page" id="product-page">
+        <div class="product-gallery">
+          <div class="product-main-media">
+            <img
+              id="product-image"
+              src="assets/images/modelo-01-negro-amarillo.svg"
+              alt="Placeholder de Modelo 01 con armazón negro y cristal amarillo. Foto real pendiente."
+              width="800"
+              height="600"
+            >
+            <span class="media-badge">IMAGEN DEMO</span>
+          </div>
+
+          <div class="product-thumbs" id="product-thumbs" role="group" aria-label="Elegir color del cristal"></div>
+          <p class="gallery-note">Las fotos son espacios reservados. Se reemplazan por imágenes reales de cada variante.</p>
+        </div>
+
+        <div class="product-summary">
+          <p class="eyebrow">COLECCIÓN / DEMO</p>
+          <h1 id="product-name">MODELO 01</h1>
+          <p class="product-page-price" id="product-price">$49.000</p>
+          <p class="product-description" id="product-description">
+            Anteojos de moda urbana con cristal de color. Cada par se prepara a pedido.
+          </p>
+
+          <div class="variant-block">
+            <div class="variant-head">
+              <span class="variant-label" id="frame-label">ARMAZÓN</span>
+              <span class="variant-value" id="frame-value">Negro</span>
+            </div>
+            <div class="variant-options" id="frame-options" role="group" aria-labelledby="frame-label"></div>
+          </div>
+
+          <div class="variant-block">
+            <div class="variant-head">
+              <span class="variant-label" id="lens-label">CRISTAL</span>
+              <span class="variant-value" id="lens-value">Amarillo</span>
+            </div>
+            <div class="variant-options" id="lens-options" role="group" aria-labelledby="lens-label"></div>
+          </div>
+
+          <p class="selection-note">
+            Elegí el armazón y el color de cristal que mejor van con vos. Cada par se prepara a pedido.
+            Combinaciones de demostración: el catálogo final puede variar.
+          </p>
+
+          <div class="product-actions">
+            <div class="qty-stepper" role="group" aria-label="Cantidad de anteojos">
+              <button type="button" id="qty-minus" aria-label="Restar un anteojo">−</button>
+              <span id="qty-value" aria-live="polite">1</span>
+              <button type="button" id="qty-plus" aria-label="Sumar un anteojo">+</button>
+            </div>
+            <button class="button button-dark add-to-cart" type="button" id="add-to-cart">AGREGAR AL CARRITO</button>
+          </div>
+          <p class="demo-note">Compra de demostración: no se procesan pagos ni se envían datos.</p>
+
+          <div class="combo-promo">
+            <p class="eyebrow">PRECIO POR CANTIDAD</p>
+            <ul class="combo-promo-list">
+              <li><span>1 anteojo</span><strong>$49.000</strong></li>
+              <li><span>2 anteojos</span><strong>$79.000</strong></li>
+              <li><span>3 anteojos</span><strong>$99.000</strong></li>
+            </ul>
+            <p>Combiná modelos y colores. El precio del combo se calcula en el carrito.</p>
+            <p class="pending-inline">
+              4 o más unidades: <span class="pending-badge pending-badge--dark">Pendiente</span>
+            </p>
+          </div>
+
+          <details class="product-accordion">
+            <summary>Detalles del producto</summary>
+            <div class="accordion-body">
+              <p>Materiales, medidas y características técnicas: pendientes de confirmación.</p>
+              <p>No se publican especificaciones ni beneficios de los cristales sin validar.</p>
+            </div>
+          </details>
+
+          <details class="product-accordion">
+            <summary>Envíos, cambios y devoluciones</summary>
+            <div class="accordion-body">
+              <p>Modalidades, plazos, costos y cobertura: pendientes de confirmación.</p>
+              <p>
+                <a class="text-link" href="envios.html">VER ENVÍOS →</a>
+                <a class="text-link" href="cambios-y-devoluciones.html">VER CAMBIOS →</a>
+              </p>
+            </div>
+          </details>
+
+          <details class="product-accordion">
+            <summary>Preguntas sobre el producto</summary>
+            <div class="accordion-body">
+              <p>¿Cómo elijo el modelo y las variantes? Escribinos cuando los canales de contacto estén confirmados.</p>
+              <p><a class="text-link" href="index.html#faq">VER PREGUNTAS FRECUENTES →</a></p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="not-found" id="product-not-found" hidden>
+        <p class="eyebrow">COLECCIÓN</p>
+        <h1>NO ENCONTRAMOS ESE MODELO</h1>
+        <p>El enlace puede estar incompleto o el modelo ya no forma parte de la demostración.</p>
+        <a class="button button-dark" href="index.html#coleccion">VER LA COLECCIÓN</a>
+      </div>
+    </div>
+
+    <section class="section related" aria-labelledby="related-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="related-title">OTROS MODELOS</h2>
+          <a class="text-link" href="index.html#coleccion">VER TODOS →</a>
+        </div>
+        <div class="product-grid" id="related-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a class="brand brand--footer" href="index.html" aria-label="PRISMA EYEWEAR — Ir al inicio">
+          <span class="brand-word">PRISMA</span>
+          <span class="brand-sub">EYEWEAR</span>
+        </a>
+        <p class="footer-tagline">EL COLOR ES ACTITUD.</p>
+        <p class="footer-disclaimer">Prototipo local de demostración. Las fotos, precios y datos comerciales están pendientes de confirmación.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Navegación del pie">
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#coleccion">Colección</a></li>
+          <li><a href="index.html#combos">Combos</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h3>Ayuda</h3>
+        <ul>
+          <li><a href="envios.html">Envíos</a> <span class="pending-badge">Pendiente</span></li>
+          <li><a href="cambios-y-devoluciones.html">Cambios y devoluciones</a> <span class="pending-badge">Pendiente</span></li>
+          <li><a href="privacidad.html">Privacidad</a> <span class="pending-badge">Pendiente</span></li>
+          <li><a href="terminos.html">Términos</a> <span class="pending-badge">Pendiente</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact" id="contacto">
+        <h3>Contacto</h3>
+        <ul>
+          <li><span class="footer-pending">Instagram <span class="pending-badge">Pendiente</span></span></li>
+          <li><span class="footer-pending">WhatsApp <span class="pending-badge">Pendiente</span></span></li>
+          <li><span class="footer-pending">Email <span class="pending-badge">Pendiente</span></span></li>
+        </ul>
+        <p class="footer-note">Los canales se confirman antes de publicar.</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> PRISMA EYEWEAR. Prototipo local.</p>
+      <a class="text-link text-link--light" href="#contenido">VOLVER ARRIBA ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

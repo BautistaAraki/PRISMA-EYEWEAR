@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Placeholder de detalle: CRISTAL">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FAF8F5"/>
+      <stop offset="1" stop-color="#E5E0D8"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  
+  <g transform="translate(115 170)">
+    <rect x="0" y="0" width="170" height="140" rx="34" fill="#F39C3A" fill-opacity=".80" stroke="#1A1A1A" stroke-width="16"/>
+    <rect x="205" y="0" width="170" height="140" rx="34" fill="#F39C3A" fill-opacity=".80" stroke="#1A1A1A" stroke-width="16"/>
+    <path d="M170 58h35" stroke="#1A1A1A" stroke-width="16" stroke-linecap="round"/>
+    <path d="M0 45l-45-18M375 45l45-18" stroke="#1A1A1A" stroke-width="16" stroke-linecap="round"/>
+    <path d="M32 18c28-14 70-14 106 0M237 18c28-14 70-14 106 0" fill="none" stroke="#FFFFFF" stroke-opacity=".35" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="300" y="548" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" letter-spacing="5" fill="#1A1A1A">DETALLE 02 · CRISTAL</text>
+  <text x="300" y="575" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="3" fill="#6B665F">FOTO PENDIENTE</text>
+</svg>
