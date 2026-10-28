@@ -2,7 +2,9 @@
 
 Prototipo responsive de la tienda PRISMA EYEWEAR, construido con **HTML5, CSS3 y JavaScript vanilla**. No usa frameworks, dependencias ni procesos de build.
 
-> **Estado:** bloque 2 en revisión. Home, ficha de producto, carrito demo y páginas de ayuda maquetados con placeholders. Faltan fotos reales, logo final y datos comerciales.
+> **Estado al 28/10/2026:** home, ficha de producto, carrito demo y páginas de ayuda implementados con placeholders. Faltan fotos reales, logo final, datos comerciales y acceso a Tiendanube. La aprobación visual y comercial corresponde al dueño.
+
+El prototipo permite validar diseño, navegación y simulación de compra. No tiene backend, base de datos, pagos ni checkout real. No es automáticamente compatible con Tiendanube: la adaptación se evaluará cuando haya acceso, revisando primero la tienda existente sobre Ipanema.
 
 ## Cómo verlo
 
@@ -49,17 +51,44 @@ PRISMA-EYEWEAR/
 - Sección de colores que filtra la colección, franja de detalles, Nosotros, FAQ y footer.
 - Páginas de ayuda legales con estructura de demostración y datos marcados como pendientes.
 
-## Decisiones provisorias
+## Decisiones confirmadas para el prototipo
 
-Estas decisiones están tomadas para poder avanzar y **requieren confirmación**:
+Según el handoff del 28/10/2026, estas decisiones rigen el prototipo. El catálogo y los activos definitivos de la tienda siguen pendientes:
 
 - Titular del hero: «EL COLOR ES ACTITUD.».
+- CTA del hero: «DESCUBRÍ LA COLECCIÓN».
+- Sección de colores: «TRES COLORES. INFINITAS ACTITUDES.».
+- Paleta: crema `#F4EEE7`, negro `#1A1A1A`, rojo `#D6453A`, naranja `#F39C3A` y amarillo `#F7E06B`.
 - Cuatro modelos de prueba (Modelo 01 a Modelo 04).
 - Seis ítems de navegación: Inicio, Colección, Combos, Nosotros, FAQ y Contacto.
 - Tipografía Archivo desde Google Fonts, con fallback al sistema.
 - Logo provisorio como texto «PRISMA EYEWEAR».
 - Imágenes SVG locales que indican «foto pendiente»; no son productos reales.
 - Precios de combos tomados del brief: $49.000, $79.000 y $99.000.
+- El combo se calcula por cantidad total del carrito, mezclando modelos y colores. Para 4 o más unidades, precio pendiente y checkout demo bloqueado.
+
+## Recorrido de prueba manual
+
+1. Iniciar el servidor local y abrir la home. Probar navegación, menú móvil, filtros de cristal y botones de combos.
+2. Entrar a «Ver detalles». Cambiar armazón y cristal; comprobar imagen, miniaturas y selección.
+3. Agregar una unidad al carrito: total esperado $49.000.
+4. Subir la cantidad a 2 y luego a 3: totales esperados $79.000 y $99.000. Probar también mezclando variantes.
+5. Llegar a 4 unidades: debe aparecer «A confirmar» y quedar deshabilitado el checkout demo.
+6. Recargar y verificar la persistencia. Abrir otra pestaña del carrito y comprobar la sincronización al cambiar cantidades.
+7. Quitar líneas y vaciar con confirmación; comprobar el estado vacío y el acceso a la colección.
+8. Abrir `producto.html` sin parámetro (Modelo 01) y con `?modelo=99` (modelo no encontrado).
+9. Abrir las cuatro páginas de ayuda desde el footer y recorrer sus enlaces.
+10. Revisar a 390 px y 1280 px, navegar con teclado y comprobar foco visible, ausencia de desborde y consola sin errores.
+
+Las pruebas de navegador y los resultados de Lighthouse del 27/10/2026 son antecedentes documentados; no se repitieron durante la actualización documental del 28/10/2026.
+
+## Forma de trabajo
+
+- Antes de cada bloque: explicar el alcance y los archivos a modificar.
+- Después: entregar resumen, pasos de prueba, pendientes y mensaje de commit sugerido; esperar confirmación antes del siguiente bloque.
+- No hacer commit ni push sin autorización explícita. No borrar archivos sin consultar.
+- Mantener HTML, CSS y JavaScript vanilla, accesibilidad y respeto por `prefers-reduced-motion`.
+- No inventar contenido comercial o técnico ni agregar funcionalidades no acordadas.
 
 ## Pendientes
 

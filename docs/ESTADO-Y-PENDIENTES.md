@@ -1,7 +1,64 @@
 # Estado del proyecto y pendientes
 
-> **Fecha de verificación:** 27/10/2026
-> **Estado:** información guardada y verificada.
+> **Actualización documental:** 28/10/2026.
+> **Estado actual:** prototipo local implementado; tienda final pendiente de acceso, contenido y configuración comercial.
+
+## Estado vigente — 28/10/2026
+
+Esta sección refleja el handoff del 28/10/2026 y la revisión del repositorio. Los apartados posteriores se conservan como registro histórico y no deben interpretarse como tareas actuales ni como autorización para ejecutar sus planes.
+
+- Base revisada: rama `master`, commit `6f0c43c` — `feat: completar ficha de producto, carrito demo y paginas de ayuda`.
+- Al inicio de la revisión, el árbol de trabajo estaba limpio y sin diferencias con la referencia local `origin/master`. No se consultó el remoto para comprobar cambios posteriores.
+- Home, ficha, variantes, carrito demo y cuatro páginas de ayuda implementados en HTML, CSS y JavaScript vanilla.
+- Los antiguos modales de vista rápida y carrito de la home fueron reemplazados por páginas. Solo el checkout es un aviso de demostración.
+- Cuatro modelos demo, dos armazones y tres cristales: 24 variantes con placeholders SVG identificados.
+- Carrito persistido en `localStorage` bajo `prisma-cart-v1`. No hay backend, base de datos ni pagos reales.
+- Precios por cantidad total, mezclando modelos y colores: 1 por $49.000, 2 por $79.000 y 3 por $99.000. Para 4 o más: «A confirmar» y checkout demo bloqueado.
+
+### Decisiones vigentes del prototipo
+
+- Hero: «EL COLOR ES ACTITUD.»; CTA: «DESCUBRÍ LA COLECCIÓN».
+- Colores: «TRES COLORES. INFINITAS ACTITUDES.».
+- Paleta: crema `#F4EEE7`, negro `#1A1A1A`, rojo `#D6453A`, naranja `#F39C3A` y amarillo `#F7E06B`.
+- Tipografía Archivo desde Google Fonts, con fallback al sistema; logo provisional como texto «PRISMA EYEWEAR».
+- Navegación: Inicio, Colección, Combos, Nosotros, Preguntas frecuentes y Contacto. Nosotros y FAQ son secciones de la home.
+- La referencia visual orienta el diseño; no es un logo final ni fotografías reales de los productos.
+- Los textos y decisiones anteriores del brief se conservan como fuente, pero estas definiciones del handoff rigen el prototipo actual.
+
+### Las cinco fases del brief
+
+| Fase | Objetivo final | Situación al 28/10/2026 |
+|---|---|---|
+| 1. Inmediata | Acceso, auditoría de tienda existente, alcance y activos de referencia. | Brief y referencia disponibles. Acceso a Tiendanube y logo final pendientes. Revisar Ipanema antes de reconstruir. |
+| 2. Diseño | Home y plantilla de producto con placeholders, revisión del dueño. | Prototipo local implementado; no implica aprobación visual definitiva. |
+| 3. Comercio | Variantes, combos, pagos, envíos, legales y SEO. | Variantes, combos y carrito simulados. Configuración comercial y checkout real pendientes en Tiendanube. |
+| 4. Contenido | Incorporar fotos y fichas técnicas finales. | Pendiente de activos reales y datos validados. |
+| 5. QA | Compra real de prueba, correcciones, publicación y capacitación. | Hay pruebas previas del prototipo. Falta verificar el flujo real en Tiendanube y preparar la entrega. |
+
+Las fases de la tienda final son distintas de los bloques pequeños de desarrollo local. El prototipo no se migra automáticamente a Tiendanube; la adaptación depende de la plataforma y de la plantilla disponible.
+
+### Pendientes y bloqueos vigentes
+
+- Acceso de colaborador a Tiendanube para auditar la tienda existente.
+- Fotos reales de campaña, modelos, variantes y detalles; logo final.
+- Catálogo final, nombres o códigos, materiales, medidas y documentación de tratamientos UV, blue-light y antirreflejo.
+- Regla de precios para 4 o más unidades; packaging y si está incluido.
+- Proveedor de pagos, cuotas y condiciones; envíos, cobertura, plazos, costos y retiros.
+- Textos de envíos, cambios, devoluciones, privacidad y términos validados; respuestas definitivas de FAQ.
+- Titular, razón social, CUIT, domicilio, correo, canales de contacto, dominio y redes.
+- Confirmación escrita de entregables, revisiones, incorporación posterior de fotos, plazos y gastos de terceros del desarrollo final.
+
+Los datos faltantes se mantienen como pendientes. Los costos internos del brief son privados y no se publican en el sitio.
+
+### Verificación y continuidad
+
+Los resultados de navegador y Lighthouse informados en las actualizaciones del 27/10/2026 son antecedentes. No se ejecutaron nuevamente durante esta actualización documental. El recorrido reproducible está en `README.md`, sección «Recorrido de prueba manual».
+
+Cada bloque requiere explicación previa de alcance y archivos, y entrega posterior de resumen, prueba, pendientes y commit sugerido. Esperar confirmación antes del siguiente bloque. No hacer commit ni push sin autorización explícita ni borrar archivos sin consultar.
+
+## Registro histórico — 27/10/2026
+
+Se conserva el contenido original a continuación. Las menciones a carpeta vacía, ausencia de Git o código, funciones por implementar y decisiones por confirmar describen etapas anteriores. El plan histórico de inicializar Git y crear un primer commit no es una instrucción vigente.
 
 ---
 
