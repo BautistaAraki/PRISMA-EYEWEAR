@@ -124,6 +124,11 @@ h3 {
 }
 
 /* ---------- 2. Utilidades ---------- */
+/* hidden debe prevalecer sobre los layouts grid y flex de los componentes. */
+[hidden] {
+  display: none !important;
+}
+
 .container {
   width: min(100% - 40px, var(--container));
   margin-inline: auto;
@@ -444,7 +449,7 @@ section[id],
   position: relative;
   display: flex;
   align-items: center;
-  min-height: clamp(600px, 84vh, 780px);
+  min-height: clamp(440px, 56vh, 520px);
   overflow: hidden;
   background: var(--gray-100);
 }
@@ -480,8 +485,7 @@ section[id],
 .hero-content {
   position: relative;
   z-index: 1;
-  width: 100%;
-  padding-block: 88px;
+  padding-block: 56px 104px;
 }
 
 .hero-content > * {
@@ -510,6 +514,74 @@ section[id],
 
 .hero-cta {
   min-height: 48px;
+}
+
+.hero-controls {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 20px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hero-demo {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  z-index: 2;
+  padding: 5px 8px;
+  background: var(--cream);
+  color: var(--black);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+}
+
+.hero-pagination,
+.hero-arrows {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px;
+  background: var(--cream);
+  color: var(--black);
+  border-radius: 4px;
+}
+
+.hero-dot,
+.hero-arrow {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.hero-dot::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.hero-dot[aria-pressed="true"]::before {
+  background: currentColor;
+}
+
+.hero-arrow {
+  font-size: 1.3rem;
+}
+
+.hero-counter {
+  min-width: 36px;
+  font-size: .75rem;
+  text-align: center;
 }
 
 /* ---------- 5. Secciones y colección ---------- */
@@ -2104,7 +2176,7 @@ section[id],
 
   .hero {
     align-items: flex-end;
-    min-height: 680px;
+    min-height: 460px;
   }
 
   .hero::after {
@@ -2119,7 +2191,7 @@ section[id],
   }
 
   .hero-content {
-    padding-block: 0 56px;
+    padding-block: 72px 96px;
   }
 
   .hero .eyebrow {
@@ -2129,7 +2201,7 @@ section[id],
   .hero h1 {
     margin-bottom: 18px;
     color: var(--cream);
-    font-size: clamp(2.8rem, 13vw, 4.4rem);
+    font-size: clamp(2.4rem, 10vw, 3.6rem);
   }
 
   .hero-subtitle {
@@ -2148,6 +2220,10 @@ section[id],
     border-color: var(--cream);
     background: var(--cream);
     color: var(--black);
+  }
+
+  .hero-controls {
+    bottom: 16px;
   }
 }
 

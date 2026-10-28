@@ -29,7 +29,7 @@ Esta sección refleja el handoff del 28/10/2026 y la revisión del repositorio. 
 
 | Fase | Objetivo final | Situación al 28/10/2026 |
 |---|---|---|
-| 1. Inmediata | Acceso, auditoría de tienda existente, alcance y activos de referencia. | Brief y referencia disponibles. Acceso a Tiendanube y logo final pendientes. Revisar Ipanema antes de reconstruir. |
+| 1. Inmediata | Acceso, comprobación del estado de Tiendanube, alcance y activos de referencia. | Brief y referencia disponibles. Acceso y logo final pendientes. La existencia de una tienda previa sobre Ipanema no está confirmada; comprobarla antes de decidir entre revisión o configuración desde cero. |
 | 2. Diseño | Home y plantilla de producto con placeholders, revisión del dueño. | Prototipo local implementado; no implica aprobación visual definitiva. |
 | 3. Comercio | Variantes, combos, pagos, envíos, legales y SEO. | Variantes, combos y carrito simulados. Configuración comercial y checkout real pendientes en Tiendanube. |
 | 4. Contenido | Incorporar fotos y fichas técnicas finales. | Pendiente de activos reales y datos validados. |
@@ -39,7 +39,7 @@ Las fases de la tienda final son distintas de los bloques pequeños de desarroll
 
 ### Pendientes y bloqueos vigentes
 
-- Acceso de colaborador a Tiendanube para auditar la tienda existente.
+- Confirmar si existe una tienda Tiendanube y obtener acceso. El brief menciona Ipanema, pero el usuario puso en duda esa información el 28/10/2026. Si existe, revisarla; si no, preparar la configuración desde cero sin crear cuentas ni contratar servicios sin autorización.
 - Fotos reales de campaña, modelos, variantes y detalles; logo final.
 - Catálogo final, nombres o códigos, materiales, medidas y documentación de tratamientos UV, blue-light y antirreflejo.
 - Regla de precios para 4 o más unidades; packaging y si está incluido.
@@ -55,6 +55,111 @@ Los datos faltantes se mantienen como pendientes. Los costos internos del brief 
 Los resultados de navegador y Lighthouse informados en las actualizaciones del 27/10/2026 son antecedentes. No se ejecutaron nuevamente durante esta actualización documental. El recorrido reproducible está en `README.md`, sección «Recorrido de prueba manual».
 
 Cada bloque requiere explicación previa de alcance y archivos, y entrega posterior de resumen, prueba, pendientes y commit sugerido. Esperar confirmación antes del siguiente bloque. No hacer commit ni push sin autorización explícita ni borrar archivos sin consultar.
+
+## Verificación del prototipo — 28/10/2026
+
+Base probada: commit `fcffbd2`, con la aplicación sin modificaciones. Se utilizó el navegador integrado sobre `http://127.0.0.1:8001`, con servidor Python limitado a la interfaz local. Esta revisión no incluye nuevas mediciones de Lighthouse.
+
+### Resultados comprobados
+
+| Prueba | Resultado observado |
+|---|---|
+| Filtro rojo en home | El estado anuncia «Mostrando 1 modelo con cristal rojo». La inspección del código confirma el uso de la clase `is-hidden`; no usa el atributo HTML `hidden`. Falta completar la comprobación visual de los tres filtros. |
+| Botón de combo de 2 | Muestra el toast de 2 anteojos por $79.000 y explica que se eligen los modelos. |
+| Ficha y variantes | Se abrió Modelo 01 desde la home. Elegir Azul/Rojo actualizó la imagen a `modelo-01-azul-rojo.svg`; elegir la miniatura naranja actualizó el texto alternativo a Azul/Naranja. |
+| Agregar al carrito | La línea conservó Modelo 01, armazón Azul y cristal Naranja. |
+| Totales 1/2/3 | $49.000 / $79.000 / $99.000 al modificar cantidades de una línea. |
+| Combo mixto de 2 | Modelo 01 Azul/Naranja y Modelo 02 Negro/Naranja: total $79.000. |
+| Checkout demo con 3 | Abrió el aviso de demostración y se cerró con «ENTENDIDO». |
+| Caso 4+ | Con 4 unidades: «A confirmar» y botón de checkout deshabilitado. |
+| Persistencia | Tras recargar, se conservaron las 4 unidades y el precio pendiente. |
+| Sincronización entre pestañas | El resumen de la segunda pestaña pasó a 3 unidades y $99.000; el contador del header quedó en 4. Es un fallo pendiente. |
+| Quitar una de dos líneas | Se quitó Modelo 02 y el foco pasó al botón para quitar Modelo 01. |
+| Cantidad mínima y foco | Al restar de 2 a 1, el foco terminó en `body`. Es un fallo pendiente. |
+| Ficha sin parámetro | Se mostró Modelo 01. |
+| Modelo inválido | El título cambió a «Modelo no encontrado» y apareció el aviso, pero la ficha original siguió visible. Es un fallo pendiente. |
+| Responsive | En home, producto, carrito y las cuatro páginas de ayuda, `scrollWidth` coincidió con `clientWidth` a 390 y 1280 px: sin desborde horizontal medido. Inspección visual de home y producto en móvil. |
+| Ayuda | Las cuatro páginas cargaron con su título correspondiente y el aviso «Estructura de demostración». |
+| Referencias locales | Revisión estática de los 7 HTML: sin archivos locales faltantes en `href`, `src` y `srcset`. No equivale a verificar todos los destinos con fragmentos. |
+| Consola | Los registros de error/advertencia capturados en la pestaña secundaria devolvieron una lista vacía. |
+
+### Fallos reproducidos y siguiente bloque propuesto
+
+1. **Ficha visible para modelo inválido:** abrir `producto.html?modelo=99`. `#product-page` recibe `hidden`, pero `.product-page { display: grid; }` lo mantiene visible (altura medida mayor que cero). Revisar el respeto de `hidden` en CSS y también los estados ocultos del carrito.
+2. **Contador desactualizado en otra pestaña:** abrir dos carritos con 4 unidades y restar una en la primera. La segunda muestra resumen de 3 y header de 4. El manejador `storage` del carrito renderiza las líneas, pero no actualiza el contador compartido. Corregir la sincronización desde la lógica compartida.
+3. **Pérdida de foco en el límite de cantidad:** bajar una línea de 2 a 1. El botón de restar se deshabilita y `restoreFocus()` no elige una alternativa. Corregir la selección de un control habilitado y verificar también el máximo de 9.
+
+Archivos previstos para ese bloque: `css/styles.css`, `js/store.js`, `js/cart.js` y este documento. No se aplicaron correcciones durante la verificación; requieren confirmación del siguiente bloque.
+
+### Pruebas incompletas y limitación de la sesión
+
+Al pulsar «VACIAR CARRITO», el navegador de automatización agotó el tiempo de espera y la pestaña principal quedó inaccesible. La API de diálogos no permitió recuperar la confirmación. Los clics posteriores en la pestaña secundaria no produjeron los cambios esperados, por lo que no se consideran evidencia de fallos adicionales del sitio. Las navegaciones directas y lecturas de DOM permitieron continuar las comprobaciones de contenido y dimensiones.
+
+Quedaron pendientes: confirmar/cancelar el vaciado, quitar la última línea y verificar el estado vacío, interacción del menú móvil, navegación activa al hacer scroll, filtros completos, recorrido de teclado y foco visible, límite máximo de cantidad, y repetición de Lighthouse. El bloqueo de automatización no demuestra por sí mismo un defecto de «Vaciar carrito».
+
+## Correcciones posteriores a QA — 28/10/2026
+
+Bloque autorizado por el usuario después de la verificación. Cambios aplicados:
+
+- **`css/styles.css`:** regla global `[hidden] { display: none !important; }`. El atributo `hidden` ahora prevalece sobre `display: grid` y otros layouts; evita mostrar la ficha inválida o el resumen de un carrito vacío.
+- **`js/store.js`:** función `notifyCartChange(cart)` compartida por el guardado local y el evento `storage`. Actualiza el contador y su `aria-label`, y emite `prisma:cartchange` para que cada página interesada actualice su contenido. El listener solo procesa el almacenamiento local y la clave del carrito (o un vaciado general); no vuelve a guardar, por lo que no genera ciclos entre pestañas. Reinicia la copia en memoria antes de releer para contemplar eliminación de la clave o limpieza del almacenamiento.
+- **`js/cart.js`:** se eliminó el listener de `storage` específico de la página, ya cubierto por la notificación compartida. En `restoreFocus()`, si el botón de cantidad elegido queda deshabilitado, se enfoca un botón de cantidad habilitado de esa misma línea: sumar al llegar a 1, restar al llegar a 9.
+
+Pruebas nuevas realizadas en navegador sobre `http://127.0.0.1:8002` para evitar la caché de los recursos de la sesión anterior:
+
+- Modelo inválido: `#product-page` tiene `display: none`; se ve el aviso de modelo no encontrado.
+- Carrito inicialmente vacío: estado vacío visible y layout de compra oculto.
+- Al agregar desde la ficha, aparecen la línea y el resumen; precio de 1: $49.000 y de 2: $79.000.
+- Contador de una home abierta en otra pestaña: cambia a 2 sin recargar.
+- Dos carritos abiertos: al llegar a 9, el resumen y el contador secundario muestran 9.
+- Teclado: restar de 2 a 1 con Enter deja el foco visible en sumar; subir a 9 deja el foco en restar y deshabilita sumar.
+- Con 4 unidades: precio «A confirmar» y checkout bloqueado. Con 3: $99.000; tras recargar se conservan cantidad y total.
+- Quitar la última línea: ambos carritos pasan al estado vacío, el contador secundario marca 0 y el foco local queda en «VER LA COLECCIÓN».
+- Menú móvil: abre con `aria-expanded="true"` y cierra al elegir Colección. Filtros visibles: amarillo muestra 01/04, naranja 02 y rojo 03.
+- Ficha a 390 px: sin desborde horizontal medido. Registros de error/advertencia de la pestaña principal: vacíos en el recorrido del carrito.
+
+Pendiente de esta revisión: confirmar/cancelar «Vaciar carrito» mediante su diálogo nativo, recorrido completo de teclado y navegación activa al hacer scroll, nuevas mediciones Lighthouse y comprobación directa de eliminación externa de la clave del carrito. No se modificaron los precios ni las reglas de negocio. No se agregaron dependencias.
+
+## Continuación de QA: teclado y navegación — 28/10/2026
+
+Se continuó sobre los cambios sin commit del bloque anterior, sin modificar adicionalmente HTML, CSS ni JavaScript.
+
+- El primer Tab enfoca «Saltar al contenido» con `:focus-visible` y contorno `solid`; el enlace se puede activar con Enter.
+- Al navegar por el header a Combos y FAQ, se verificó `aria-current` en `#combos` y `#faq`, respectivamente. El header incorpora `is-scrolled` tras el desplazamiento.
+- La primera pregunta de FAQ abre su elemento `details` con Enter.
+- Los selectores Azul y Rojo responden a Enter/Espacio y quedan con `aria-pressed="true"`.
+- Se agregó al carrito con Enter y se abrió el checkout demo con Enter. El foco inicial del diálogo quedó en «Cerrar aviso»; Escape lo cerró y devolvió el foco a `#checkout-button`.
+
+Esto comprueba los recorridos indicados, no una auditoría exhaustiva de accesibilidad ni todos los controles de todas las páginas.
+
+No se pudo completar Lighthouse: la herramienta de consola no está instalada, y el intento de abrir Chrome mediante control de aplicaciones agotó la espera de autorización de la aplicación. No se instalaron paquetes ni se modificaron dependencias. La confirmación/cancelación nativa de «Vaciar carrito» sigue pendiente por la limitación del navegador de automatización documentada anteriormente. No se sustituyen estos resultados por las mediciones históricas.
+
+### Explicación del flujo corregido
+
+En una modificación local, `saveCart()` normaliza los ítems, actualiza la copia en memoria e intenta persistir. Después llama a `notifyCartChange()`, que actualiza el contador y emite `prisma:cartchange`; `cart.js` escucha ese evento y renderiza líneas y resumen.
+
+En otra pestaña, el navegador emite `storage`. El listener de `store.js` filtra el almacenamiento y la clave, limpia la copia anterior en memoria, relee el carrito y llama al mismo notificador. No llama a `saveCart()`: así evita escrituras innecesarias y ciclos de notificaciones. Todas las páginas cargan `store.js`, por eso el contador también se sincroniza en home, producto y ayuda.
+
+Cada render del carrito reemplaza los controles anteriores. Para mantener la navegación por teclado, `focusAfterRender` recuerda línea y acción antes del cambio; `restoreFocus()` busca el nuevo botón equivalente. Si se deshabilitó por llegar a 1 o 9, busca otro botón de cantidad habilitado en esa misma línea y lo enfoca.
+
+La regla CSS `[hidden]` hace respetar el estado que JavaScript ya establece. `!important` se limita a la propiedad `display` de los elementos con ese atributo, para que el ocultamiento no dependa de las reglas de layout de cada componente.
+
+## Hero compacto con carrusel manual — 28/10/2026
+
+Cambio solicitado por el usuario: reducir el hero y convertirlo en carrusel.
+
+- `index.html`: tres diapositivas con placeholders locales existentes (campaña responsive, editorial de color y cierre editorial). Un único titular y CTA permanecen fijos. Controles anterior/siguiente, tres indicadores con `aria-pressed`, contador anunciado con `role="status"` y aviso visible «IMÁGENES DEMO».
+- `css/styles.css`: altura mínima de escritorio `clamp(440px, 56vh, 520px)` en lugar de `clamp(600px, 84vh, 780px)`; móvil de 680 a 460 px. Se ajustaron padding y tipografía móvil para reservar espacio a los controles de 44 × 44 px. Se retiró `width: 100%` de `.hero-content` para respetar los márgenes de `.container`.
+- `js/app.js`: `heroIndex` guarda la imagen activa. `showHeroSlide()` calcula el índice circular, aplica `hidden` a las otras imágenes y actualiza indicadores y contador. Un listener en el contenedor distingue indicadores y flechas mediante atributos `data-*`. Solo se habilita si existen controles y al menos dos imágenes; en las subpáginas no se inicializa. Sin temporizadores ni transiciones entre imágenes: el usuario controla el avance y no se agrega movimiento. Sin JavaScript queda visible la primera imagen y los controles permanecen ocultos.
+- `README.md`: se documentó el carrusel entre las funcionalidades actuales.
+
+Verificado en navegador: siguiente 1→2, selección directa de 3, ciclo 3→1 y anterior 1→3; una sola diapositiva visible; Enter y Espacio activan los controles; contador e indicadores sincronizados. Sin errores/advertencias en la consola capturada. Medidas: aproximadamente 488 px de alto a 1280 px de ancho y 460 px a 390 px. Sin desborde horizontal en ambos tamaños e inspección visual del hero en escritorio y móvil.
+
+Para probar: abrir la home, recorrer flechas e indicadores con mouse o Tab + Enter/Espacio y comprobar el acceso a Colección. Las fotos finales siguen pendientes. No se ejecutó Lighthouse en este bloque. No se hicieron commits ni push.
+
+### Revisión del usuario y aclaración de Tiendanube
+
+El usuario informó que funciona y autorizó el commit de los cambios. Esa confirmación no sustituye las mediciones Lighthouse ni las pruebas específicas que siguen documentadas como pendientes. También indicó que cree que no hay una versión previa en Tiendanube: su existencia y el uso de Ipanema quedan sin confirmar, aunque figuren en el brief original. El siguiente paso en plataforma depende de comprobar ese estado.
 
 ## Registro histórico — 27/10/2026
 

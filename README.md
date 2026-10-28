@@ -4,7 +4,7 @@ Prototipo responsive de la tienda PRISMA EYEWEAR, construido con **HTML5, CSS3 y
 
 > **Estado al 28/10/2026:** home, ficha de producto, carrito demo y páginas de ayuda implementados con placeholders. Faltan fotos reales, logo final, datos comerciales y acceso a Tiendanube. La aprobación visual y comercial corresponde al dueño.
 
-El prototipo permite validar diseño, navegación y simulación de compra. No tiene backend, base de datos, pagos ni checkout real. No es automáticamente compatible con Tiendanube: la adaptación se evaluará cuando haya acceso, revisando primero la tienda existente sobre Ipanema.
+El prototipo permite validar diseño, navegación y simulación de compra. No tiene backend, base de datos, pagos ni checkout real. No es automáticamente compatible con Tiendanube: la adaptación se evaluará cuando haya acceso. El brief menciona una tienda previa sobre Ipanema, pero el usuario puso en duda su existencia el 28/10/2026. Primero se comprobará si existe una tienda; según el resultado, se revisará lo existente o se preparará la configuración desde cero.
 
 ## Cómo verlo
 
@@ -44,6 +44,7 @@ PRISMA-EYEWEAR/
 
 - Header sticky con navegación, menú móvil y contador de carrito.
 - Hero con el titular «EL COLOR ES ACTITUD.».
+- Hero compacto con carrusel manual de tres placeholders, flechas, indicadores y contador accesible. Sin avance automático.
 - Colección de 4 modelos con filtro por color de cristal.
 - Ficha de producto con selector de armazón y cristal, miniaturas, cantidad y otros modelos.
 - Carrito persistido en `localStorage` (`prisma-cart-v1`), con cantidades, quitar, vaciar y precio por cantidad.

@@ -54,6 +54,38 @@
     }, 4200);
   }
 
+  /* ---------- Carrusel del hero: avance manual, sin temporizadores ---------- */
+
+  const heroSlides = Array.from(document.querySelectorAll('#hero-slides .hero-media'));
+  const heroControls = document.querySelector('.hero-controls');
+  const heroDots = Array.from(document.querySelectorAll('[data-hero-slide]'));
+  const heroCounter = document.getElementById('hero-counter');
+  let heroIndex = 0;
+
+  function showHeroSlide(index) {
+    heroIndex = (index + heroSlides.length) % heroSlides.length;
+    heroSlides.forEach(function (slide, slideIndex) {
+      slide.hidden = slideIndex !== heroIndex;
+    });
+    heroDots.forEach(function (button, slideIndex) {
+      button.setAttribute('aria-pressed', String(slideIndex === heroIndex));
+    });
+    if (heroCounter) heroCounter.textContent = (heroIndex + 1) + ' / ' + heroSlides.length;
+  }
+
+  if (heroControls && heroSlides.length > 1) {
+    heroControls.hidden = false;
+    heroControls.addEventListener('click', function (event) {
+      const button = event.target.closest('button');
+      if (!button) return;
+      if (button.hasAttribute('data-hero-slide')) {
+        showHeroSlide(Number(button.dataset.heroSlide));
+      } else if (button.hasAttribute('data-hero-direction')) {
+        showHeroSlide(heroIndex + Number(button.dataset.heroDirection));
+      }
+    });
+  }
+
   /* ---------- Menú móvil ---------- */
 
   function setMenu(open) {

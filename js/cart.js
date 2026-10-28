@@ -142,6 +142,10 @@
       );
       if (line) {
         target = line.querySelector('[data-action="' + focusAfterRender.action + '"]');
+        // En los límites (1 y 9), pasar al otro control de cantidad habilitado.
+        if (!target || target.disabled) {
+          target = line.querySelector('.qty-control button:not(:disabled)');
+        }
       }
     }
 
@@ -221,10 +225,6 @@
   });
 
   document.addEventListener('prisma:cartchange', render);
-
-  window.addEventListener('storage', function (event) {
-    if (event.key === 'prisma-cart-v1') render();
-  });
 
   render();
 })();

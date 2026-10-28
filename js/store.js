@@ -107,6 +107,13 @@ window.PRISMA = window.PRISMA || {};
     });
   }
 
+  function notifyCartChange(cart) {
+    updateCartCount();
+    document.dispatchEvent(new CustomEvent('prisma:cartchange', {
+      detail: { cart: cart, total: getTotal() }
+    }));
+  }
+
   function saveCart(items) {
     const normalized = normalizeCart(items);
     memoryCart = normalized;
@@ -117,10 +124,7 @@ window.PRISMA = window.PRISMA || {};
       // Si el navegador bloquea localStorage, el carrito sigue en memoria.
     }
 
-    updateCartCount();
-    document.dispatchEvent(new CustomEvent('prisma:cartchange', {
-      detail: { cart: normalized, total: getTotal() }
-    }));
+    notifyCartChange(normalized);
 
     return normalized;
   }
@@ -221,6 +225,17 @@ window.PRISMA = window.PRISMA || {};
     getCartWithProducts: getCartWithProducts,
     updateCartCount: updateCartCount
   };
+
+  // storage se dispara en las otras pestañas, no en la que guardó el cambio.
+  window.addEventListener('storage', function (event) {
+    if (event.storageArea !== window.localStorage) return;
+    if (event.key !== STORAGE_KEY && event.key !== null) return;
+
+    // Evitar recuperar datos viejos de memoria si se eliminó la clave o se vació storage.
+    memoryCart = [];
+    memoryCart = readCart();
+    notifyCartChange(memoryCart);
+  });
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', updateCartCount);
