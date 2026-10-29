@@ -38,6 +38,10 @@ window.PRISMA = window.PRISMA || {};
   }
 
   function variantImage(model, frame, lens) {
+    const product = getProduct(model);
+    if (product && frame === product.defaultFrame && lens === product.defaultLens) {
+      return 'assets/images/recursos/producto_modelo' + Number(model) + '_referencia_ia.png';
+    }
     return 'assets/images/modelo-' + model + '-' + frame + '-' + lens + '.svg';
   }
 

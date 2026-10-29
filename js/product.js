@@ -68,7 +68,7 @@
 
     image.src = store.variantImage(product.id, state.frame, state.lens);
     image.alt =
-      'Placeholder de ' + product.name + ' con armazón ' +
+      'Referencia mejorada con IA o SVG de demostración de ' + product.name + ' con armazón ' +
       frame.label.toLowerCase() + ' y cristal ' + lens.label.toLowerCase() +
       '. Foto real pendiente.';
   }
@@ -263,7 +263,7 @@
 
         const img = document.createElement('img');
         img.src = store.variantImage(item.id, item.defaultFrame, item.defaultLens);
-        img.alt = 'Placeholder de ' + item.name + ' con armazón ' +
+        img.alt = 'Referencia mejorada con IA de ' + item.name + ' con armazón ' +
           store.getFrame(item.defaultFrame).label.toLowerCase() + ' y cristal ' +
           store.getLens(item.defaultLens).label.toLowerCase() + '. Foto real pendiente.';
         img.width = 800;

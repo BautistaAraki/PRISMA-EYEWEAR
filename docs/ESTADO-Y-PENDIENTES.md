@@ -161,6 +161,57 @@ Para probar: abrir la home, recorrer flechas e indicadores con mouse o Tab + Ent
 
 El usuario informó que funciona y autorizó el commit de los cambios. Esa confirmación no sustituye las mediciones Lighthouse ni las pruebas específicas que siguen documentadas como pendientes. También indicó que cree que no hay una versión previa en Tiendanube: su existencia y el uso de Ipanema quedan sin confirmar, aunque figuren en el brief original. El siguiente paso en plataforma depende de comprobar ese estado.
 
+## Incorporación de `prisma_elementos.zip` — 28/10/2026
+
+Autorizado por el usuario: incorporar imágenes en sus ubicaciones y revisar el resultado. Los 28 PNG se copiaron sin modificar a `assets/images/referencias/`; no se borraron ni reemplazaron los SVG originales.
+
+- Logos: monocromático transparente en los headers y principal a color transparente en los footers de las siete páginas. Son referencias para el prototipo, no una confirmación de archivos finales de marca.
+- Home: campaña en la primera diapositiva; editoriales de tres colores y cierre en las otras dos y en sus secciones correspondientes. Detalles y composiciones de combos en sus bloques. CSS encuadra las imágenes para evitar repetir textos/botones incrustados. Se mantiene el texto y los controles HTML accesibles.
+- Productos: los cuatro PNG reemplazan la imagen de portada de cada modelo. `variantImage()` usa PNG únicamente si armazón y cristal coinciden con los valores de portada del catálogo demo. El resto sigue usando el SVG específico de esa combinación. Ficha, miniaturas, relacionados y carrito comparten esta selección.
+- No se insertaron la captura del header, la paleta ni el mockup del celular como interfaz. Se conservaron junto con los logos alternativos para referencia.
+- Se actualizaron textos alternativos y avisos de referencia/demo, y la nota de la galería explica por qué se alternan PNG y SVG.
+
+Revisión en navegador: hero y editoriales en escritorio, combos y ficha en móvil, carga de logos en las cuatro páginas de ayuda. En home móvil a 390 px no hubo imágenes rotas ni desborde horizontal; producto y ayuda tampoco desbordaron. La variante Negro/Amarillo de Modelo 01 cargó el PNG; Azul/Amarillo volvió a su SVG. Agregar la combinación PNG al carrito conservó imagen y total $49.000. La consola capturada no registró errores/advertencias. Se ajustaron los recortes de hero y combos tras la primera revisión para retirar restos de letras y botones de las composiciones.
+
+Limitación visual: las imágenes están ampliadas y se ven suaves o pixeladas, especialmente en editoriales y ficha. Los detalles originales tienen alrededor de 65 × 95 px. Los encuadres del prototipo sirven para evaluar composición, pero deben revisarse con fotos originales de alta resolución. No se ejecutó Lighthouse en este bloque.
+
+Para probar: abrir home, recorrer las tres diapositivas, Colección, Colores, Combos, Detalles y Nosotros; entrar a una ficha, cambiar armazón/cristal y agregar al carrito; abrir ayuda y verificar los logos. Commit sugerido: `feat: incorporar imagenes de referencia de PRISMA al prototipo`. No se hizo commit ni push.
+
+## Nuevos recursos JPG y SVG — 28/10/2026
+
+Incorporación autorizada de `prisma_recursos.zip`: 14 JPG y dos logos SVG guardados sin modificar en `assets/images/recursos/`. Los recursos anteriores permanecen conservados.
+
+- Las siete páginas usan el SVG oscuro en header y claro en footer. Los JPG reemplazan los PNG de home y portada de producto; se actualizaron las dimensiones HTML según cada archivo.
+- La primera diapositiva usa `<picture>` con `hero_mobile.jpg` hasta 700 px y `hero_desktop.jpg` en escritorio.
+- Se eliminaron los estilos de zoom al 220%, desplazamiento y ventanas de recorte que ocultaban textos y botones de los viejos PNG. Los combos se muestran completos con proporción 16:9 y `object-fit: contain`.
+- `variantImage()` devuelve el nuevo JPG para las combinaciones de portada y mantiene el SVG específico en las demás. Se actualizaron notas y documentación; las imágenes continúan siendo referencias, sin confirmar fotografía real del catálogo.
+
+Verificación en navegador sobre `http://127.0.0.1:8004`: inspección visual de hero y combos en escritorio, recorrido de las tres diapositivas, hero móvil servido a 1080 × 1350 px según `currentSrc`, home sin imágenes rotas, sin desborde horizontal en home/ficha/carrito a 390 px y sin errores/advertencias capturados. Modelo 01 Negro/Amarillo carga JPG; Azul/Amarillo carga SVG. Agregado al carrito conserva JPG y total $49.000. No se repitió Lighthouse.
+
+Limitaciones: productos y detalles conservan suavidad visual; el banner Tres colores tiene franjas negras en su propio archivo. No se alteraron los originales para eliminarlas. Fotos definitivas y validación del catálogo siguen pendientes.
+
+Prueba manual: recargar sin caché, recorrer carrusel y combos, cambiar variantes en ficha y agregar al carrito. Commit sugerido: `feat: actualizar recursos visuales con JPG y logos SVG`. No se hizo commit ni push.
+
+## Detalles mejorados con IA en la home — 29/10/2026
+
+El usuario autorizó colocar las tres versiones mejoradas en la página. Se copiaron desde `output/imagegen/` a `assets/images/recursos/detalle_1_referencia_ia.png`, `detalle_2_referencia_ia.png` y `detalle_3_referencia_ia.png` (1254 × 1254 px). Los JPG originales permanecen conservados.
+
+`index.html` utiliza estas copias en «Estilo en cada detalle», con dimensiones HTML reales, textos alternativos actualizados y un aviso visible de que son referencias mejoradas con IA que pueden diferir del producto real. La reconstrucción de bisagra, superficies y logo requiere validación antes de cualquier uso comercial como fotografía del producto.
+
+Verificado en navegador: las tres imágenes cargan a 1254 px de ancho natural; inspección visual en escritorio y a 390 px, sin desborde horizontal móvil ni errores/advertencias capturados. No se modificaron CSS, JavaScript, precios ni carrito en este bloque. El servidor local se reinició en el puerto 8004. No se ejecutó Lighthouse.
+
+Para probar: abrir `index.html?revision=detalles-ia#details-title` y recorrer las tres tarjetas. Commit sugerido: `feat: incorporar referencias de detalle mejoradas con IA`. No se hizo commit ni push.
+
+## Modelos mejorados con IA incorporados — 29/10/2026
+
+El usuario autorizó reemplazar las imágenes de portada de los cuatro modelos. Se copiaron las cuatro muestras de `output/imagegen/` a `assets/images/recursos/producto_modelo1_referencia_ia.png` a `producto_modelo4_referencia_ia.png`, de 1448 × 1086 px, conservando los JPG originales.
+
+Se actualizaron imágenes y dimensiones de colección en `index.html`, y `variantImage()` en `js/store.js` para compartir las nuevas portadas en ficha, miniaturas, relacionados y carrito. Los SVG siguen representando las otras variantes. Se actualizaron avisos visibles y textos alternativos en home, ficha y carrito para identificar las referencias mejoradas con IA. Los combos conservan sus composiciones JPG anteriores.
+
+Verificado sobre `http://127.0.0.1:8005`: cargan las cuatro portadas a 1448 px; ficha Modelo 01 y sus tres relacionados usan las nuevas imágenes; cambiar a Azul/Amarillo carga el SVG correspondiente; volver a Negro/Amarillo y agregar al carrito conserva la portada IA y total $49.000. Ficha y carrito sin desborde a 390 px, inspección visual de colección en escritorio y ficha móvil, consola capturada sin errores/advertencias. No se ejecutó Lighthouse. Las reconstrucciones requieren validación y no acreditan fotografía real del catálogo.
+
+Para probar: home → colección → ficha → variantes → carrito. Commit sugerido: `feat: incorporar portadas de modelos mejoradas con IA`. No se hizo commit ni push.
+
 ## Registro histórico — 27/10/2026
 
 Se conserva el contenido original a continuación. Las menciones a carpeta vacía, ausencia de Git o código, funciones por implementar y decisiones por confirmar describen etapas anteriores. El plan histórico de inicializar Git y crear un primer commit no es una instrucción vigente.

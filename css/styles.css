@@ -363,6 +363,17 @@ section[id],
   letter-spacing: .26em;
 }
 
+.brand-image {
+  width: 100px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.brand--footer .brand-image {
+  width: 170px;
+  height: auto;
+}
+
 .brand-sub {
   margin-top: 6px;
   padding-left: .46em;
@@ -460,6 +471,16 @@ section[id],
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+.reference-note {
+  margin-bottom: 24px;
+}
+
+.product-media--reference img,
+.product-main-media #product-image,
+.cart-line .cart-thumb img {
+  object-fit: contain;
 }
 
 .hero-media img {
@@ -893,6 +914,13 @@ section[id],
   margin-top: auto;
   padding: 11px 12px;
   font-size: .62rem;
+}
+
+.combo-media.combo-media--photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
 }
 
 .combo-note {
@@ -2177,6 +2205,11 @@ section[id],
   .hero {
     align-items: flex-end;
     min-height: 460px;
+  }
+
+  .brand-image {
+    height: 48px;
+    width: 82px;
   }
 
   .hero::after {

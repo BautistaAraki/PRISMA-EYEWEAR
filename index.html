@@ -32,8 +32,7 @@
       </button>
 
       <a class="brand" href="#inicio" aria-label="PRISMA EYEWEAR — Ir al inicio">
-        <span class="brand-word">PRISMA</span>
-        <span class="brand-sub">EYEWEAR</span>
+        <img class="brand-image" src="assets/images/recursos/logo_prisma_oscuro.svg" alt="PRISMA EYEWEAR — logo de referencia" width="1203" height="886">
       </a>
 
       <div class="header-actions">
@@ -63,20 +62,21 @@
     <section class="hero" id="inicio" aria-labelledby="hero-title" aria-roledescription="carrusel">
       <div class="hero-slides" id="hero-slides">
       <picture class="hero-media" role="group" aria-roledescription="diapositiva" aria-label="1 de 3">
-        <source media="(max-width: 700px)" srcset="assets/images/hero-mobile.svg">
+        <source media="(max-width: 700px)" srcset="assets/images/recursos/hero_mobile.jpg">
+
         <img
-          src="assets/images/hero-desktop.svg"
-          alt="Placeholder de foto de campaña con anteojos PRISMA. La fotografía real está pendiente."
-          width="1600"
-          height="900"
+          src="assets/images/recursos/hero_desktop.jpg"
+          alt="Imagen de referencia de campaña con anteojos PRISMA. La fotografía real está pendiente."
+          width="2400"
+          height="1200"
           fetchpriority="high"
         >
       </picture>
       <div class="hero-media" role="group" aria-roledescription="diapositiva" aria-label="2 de 3" hidden>
-        <img src="assets/images/color-editorial.svg" alt="Placeholder editorial con cristal rojo. Foto real pendiente." width="1000" height="800" loading="lazy">
+        <img src="assets/images/recursos/banner_tres_colores.jpg" alt="Imagen editorial de referencia con cristal rojo. Foto real pendiente." width="1600" height="1200" loading="lazy">
       </div>
       <div class="hero-media" role="group" aria-roledescription="diapositiva" aria-label="3 de 3" hidden>
-        <img src="assets/images/cierre-editorial.svg" alt="Placeholder editorial con cristal amarillo. Foto real pendiente." width="1200" height="800" loading="lazy">
+        <img src="assets/images/recursos/foto_mas_que_anteojos.jpg" alt="Imagen editorial de referencia con cristal amarillo. Foto real pendiente." width="1600" height="1200" loading="lazy">
       </div>
       </div>
 
@@ -89,7 +89,7 @@
           <span aria-hidden="true">→</span>
         </a>
       </div>
-      <span class="hero-demo">IMÁGENES DEMO</span>
+      <span class="hero-demo">IMÁGENES DE REFERENCIA</span>
       <div class="container hero-controls" hidden>
         <div class="hero-pagination" role="group" aria-label="Elegir imagen de campaña">
           <button type="button" class="hero-dot" aria-label="Ver imagen 1 de 3" aria-pressed="true" aria-controls="hero-slides" data-hero-slide="0"></button>
@@ -111,16 +111,17 @@
           <button class="text-link filter-reset" type="button" data-filter="todos">VER TODOS →</button>
         </div>
 
+        <p class="section-note reference-note">Imágenes de referencia mejoradas con IA. Pueden diferir del producto real; fotos y catálogo final pendientes.</p>
         <p class="filter-status" id="filter-status" role="status" aria-live="polite"></p>
 
         <div class="product-grid">
           <article class="product-card reveal" data-model="01" data-lens="amarillo">
-            <div class="product-media">
+            <div class="product-media product-media--reference">
               <img
-                src="assets/images/modelo-01.svg"
-                alt="Placeholder de Modelo 01 con armazón negro y cristal amarillo. Foto real pendiente."
-                width="800"
-                height="600"
+                src="assets/images/recursos/producto_modelo1_referencia_ia.png"
+                alt="Referencia mejorada con IA de Modelo 01 con armazón negro y cristal amarillo. Foto real pendiente."
+                width="1448"
+                height="1086"
                 loading="lazy"
               >
             </div>
@@ -137,12 +138,12 @@
           </article>
 
           <article class="product-card reveal" data-model="02" data-lens="naranja">
-            <div class="product-media">
+            <div class="product-media product-media--reference">
               <img
-                src="assets/images/modelo-02.svg"
-                alt="Placeholder de Modelo 02 con armazón negro y cristal naranja. Foto real pendiente."
-                width="800"
-                height="600"
+                src="assets/images/recursos/producto_modelo2_referencia_ia.png"
+                alt="Referencia mejorada con IA de Modelo 02 con armazón negro y cristal naranja. Foto real pendiente."
+                width="1448"
+                height="1086"
                 loading="lazy"
               >
             </div>
@@ -159,12 +160,12 @@
           </article>
 
           <article class="product-card reveal" data-model="03" data-lens="rojo">
-            <div class="product-media">
+            <div class="product-media product-media--reference">
               <img
-                src="assets/images/modelo-03.svg"
-                alt="Placeholder de Modelo 03 con armazón negro y cristal rojo. Foto real pendiente."
-                width="800"
-                height="600"
+                src="assets/images/recursos/producto_modelo3_referencia_ia.png"
+                alt="Referencia mejorada con IA de Modelo 03 con armazón negro y cristal rojo. Foto real pendiente."
+                width="1448"
+                height="1086"
                 loading="lazy"
               >
             </div>
@@ -181,12 +182,12 @@
           </article>
 
           <article class="product-card reveal" data-model="04" data-lens="amarillo">
-            <div class="product-media">
+            <div class="product-media product-media--reference">
               <img
-                src="assets/images/modelo-04.svg"
-                alt="Placeholder de Modelo 04 con armazón azul y cristal amarillo. Foto real pendiente."
-                width="800"
-                height="600"
+                src="assets/images/recursos/producto_modelo4_referencia_ia.png"
+                alt="Referencia mejorada con IA de Modelo 04 con armazón azul y cristal amarillo. Foto real pendiente."
+                width="1448"
+                height="1086"
                 loading="lazy"
               >
             </div>
@@ -208,10 +209,10 @@
     <section class="colors" id="colores" aria-labelledby="colors-title">
       <div class="colors-media">
         <img
-          src="assets/images/color-editorial.svg"
-          alt="Placeholder de foto editorial con cristales de color. Foto real pendiente."
-          width="1000"
-          height="800"
+          src="assets/images/recursos/banner_tres_colores.jpg"
+          alt="Imagen de referencia editorial con cristales de color. Foto real pendiente."
+          width="1600"
+          height="1200"
           loading="lazy"
         >
       </div>
@@ -251,8 +252,8 @@
           <article class="combo-card combo-card--featured reveal" data-combo="1">
             <p class="combo-label">1 ANTEOJO</p>
             <p class="combo-price">$49.000</p>
-            <div class="combo-media combo-media--1">
-              <img src="assets/images/modelo-01.svg" alt="Modelo 01 de demostración con cristal amarillo" width="800" height="600" loading="lazy">
+            <div class="combo-media combo-media--photo">
+              <img src="assets/images/recursos/combo_1_anteojo.jpg" alt="Composición de referencia de 1 anteojo" width="1600" height="900" loading="lazy">
             </div>
             <button class="button button-outline combo-button" type="button" data-combo="1" data-price="49000" data-label="1 anteojo">ARMÁ TU COMBO →</button>
           </article>
@@ -260,9 +261,8 @@
           <article class="combo-card reveal" data-combo="2">
             <p class="combo-label">2 ANTEOJOS</p>
             <p class="combo-price">$79.000</p>
-            <div class="combo-media combo-media--2">
-              <img src="assets/images/modelo-01.svg" alt="Modelo 01 de demostración con cristal amarillo" width="800" height="600" loading="lazy">
-              <img src="assets/images/modelo-02.svg" alt="Modelo 02 de demostración con cristal naranja" width="800" height="600" loading="lazy">
+            <div class="combo-media combo-media--photo">
+              <img src="assets/images/recursos/combo_2_anteojos.jpg" alt="Composición de referencia de 2 anteojos" width="1600" height="900" loading="lazy">
             </div>
             <button class="button button-outline combo-button" type="button" data-combo="2" data-price="79000" data-label="2 anteojos">ARMÁ TU COMBO →</button>
           </article>
@@ -270,10 +270,8 @@
           <article class="combo-card reveal" data-combo="3">
             <p class="combo-label">3 ANTEOJOS</p>
             <p class="combo-price">$99.000</p>
-            <div class="combo-media combo-media--3">
-              <img src="assets/images/modelo-01.svg" alt="Modelo 01 de demostración con cristal amarillo" width="800" height="600" loading="lazy">
-              <img src="assets/images/modelo-02.svg" alt="Modelo 02 de demostración con cristal naranja" width="800" height="600" loading="lazy">
-              <img src="assets/images/modelo-03.svg" alt="Modelo 03 de demostración con cristal rojo" width="800" height="600" loading="lazy">
+            <div class="combo-media combo-media--photo">
+              <img src="assets/images/recursos/combo_3_anteojos.jpg" alt="Composición de referencia de 3 anteojos" width="1600" height="900" loading="lazy">
             </div>
             <button class="button button-outline combo-button" type="button" data-combo="3" data-price="99000" data-label="3 anteojos">ARMÁ TU COMBO →</button>
           </article>
@@ -288,18 +286,19 @@
         <div class="section-head">
           <h2 id="details-title">ESTILO EN CADA DETALLE</h2>
         </div>
+        <p class="section-note reference-note">Imágenes de referencia mejoradas con IA. Pueden diferir del producto real; fotos definitivas pendientes.</p>
 
         <div class="detail-grid">
           <figure class="detail-card reveal">
-            <img src="assets/images/detalle-01.svg" alt="Placeholder de detalle de bisagra del armazón. Foto real pendiente." width="600" height="600" loading="lazy">
+            <img src="assets/images/recursos/detalle_1_referencia_ia.png" alt="Referencia mejorada con IA de la bisagra del armazón; no es una foto verificada del producto." width="1254" height="1254" loading="lazy">
             <figcaption>DISEÑO ATEMPORAL</figcaption>
           </figure>
           <figure class="detail-card reveal">
-            <img src="assets/images/detalle-02.svg" alt="Placeholder de detalle del cristal naranja. Foto real pendiente." width="600" height="600" loading="lazy">
+            <img src="assets/images/recursos/detalle_2_referencia_ia.png" alt="Referencia mejorada con IA del armazón y cristal naranja; no es una foto verificada del producto." width="1254" height="1254" loading="lazy">
             <figcaption>CRISTALES DE COLOR</figcaption>
           </figure>
           <figure class="detail-card reveal">
-            <img src="assets/images/detalle-03.svg" alt="Placeholder de detalle de la patilla con el nombre PRISMA. Foto real pendiente." width="600" height="600" loading="lazy">
+            <img src="assets/images/recursos/detalle_3_referencia_ia.png" alt="Referencia mejorada con IA de la patilla y el nombre PRISMA; el grabado fue reconstruido y requiere validación." width="1254" height="1254" loading="lazy">
             <figcaption>CALIDAD EN CADA DETALLE</figcaption>
           </figure>
         </div>
@@ -309,10 +308,10 @@
     <section class="about" id="nosotros" aria-labelledby="about-title">
       <div class="about-media">
         <img
-          src="assets/images/cierre-editorial.svg"
-          alt="Placeholder de foto editorial de cierre con anteojos de cristal amarillo. Foto real pendiente."
-          width="1200"
-          height="800"
+          src="assets/images/recursos/foto_mas_que_anteojos.jpg"
+          alt="Imagen de referencia editorial de cierre con anteojos de cristal amarillo. Foto real pendiente."
+          width="1600"
+          height="1200"
           loading="lazy"
         >
       </div>
@@ -378,8 +377,7 @@
     <div class="container footer-top">
       <div class="footer-brand">
         <a class="brand brand--footer" href="#inicio" aria-label="PRISMA EYEWEAR — Ir al inicio">
-          <span class="brand-word">PRISMA</span>
-          <span class="brand-sub">EYEWEAR</span>
+          <img class="brand-image" src="assets/images/recursos/logo_prisma_claro.svg" alt="PRISMA EYEWEAR — logo de referencia" width="1203" height="886">
         </a>
         <p class="footer-tagline">EL COLOR ES ACTITUD.</p>
         <p class="footer-disclaimer">Prototipo local de demostración. Las fotos, precios y datos comerciales están pendientes de confirmación.</p>

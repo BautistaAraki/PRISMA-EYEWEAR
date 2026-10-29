@@ -63,8 +63,8 @@ Según el handoff del 28/10/2026, estas decisiones rigen el prototipo. El catál
 - Cuatro modelos de prueba (Modelo 01 a Modelo 04).
 - Seis ítems de navegación: Inicio, Colección, Combos, Nosotros, FAQ y Contacto.
 - Tipografía Archivo desde Google Fonts, con fallback al sistema.
-- Logo provisorio como texto «PRISMA EYEWEAR».
-- Imágenes SVG locales que indican «foto pendiente»; no son productos reales.
+- Logos SVG de referencia incorporados desde `prisma_recursos.zip`; el archivo final de marca sigue pendiente de confirmación.
+- Imágenes JPG de referencia para home y combinaciones de portada; SVG demo para las variantes restantes. Las imágenes no acreditan el catálogo real.
 - Precios de combos tomados del brief: $49.000, $79.000 y $99.000.
 - El combo se calcula por cantidad total del carrito, mezclando modelos y colores. Para 4 o más unidades, precio pendiente y checkout demo bloqueado.
 
@@ -105,6 +105,12 @@ Las pruebas de navegador y los resultados de Lighthouse del 27/10/2026 son antec
 - Adaptación a Tiendanube.
 
 El detalle completo está en `docs/ESTADO-Y-PENDIENTES.md`.
+
+## Imágenes de referencia incorporadas
+
+Los recursos activos están en `assets/images/recursos/`: 14 JPG y dos logos SVG procedentes de `prisma_recursos.zip`. Incluyen hero de escritorio de 2400 × 1200 px, hero móvil de 1080 × 1350 px, productos/editoriales de 1600 × 1200 px, detalles de 1200 × 1200 px y combos de 1600 × 900 px. No incluyen botones ni textos incrustados; se retiraron los recortes CSS de la versión anterior.
+
+Las cuatro portadas y los tres detalles usan copias PNG mejoradas con IA, identificadas como referencias. En ficha y carrito, la portada mejorada solo se usa para su combinación de armazón/cristal; las otras combinaciones conservan sus SVG. Los JPG originales y las composiciones de combos se conservan. Las imágenes siguen identificadas como referencias: su tamaño no acredita que sean fotos reales del catálogo ni garantiza detalle original. Los PNG anteriores permanecen en `assets/images/referencias/`, sin uso en la interfaz actual y sin eliminarse.
 
 ## Documentación
 

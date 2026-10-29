@@ -40,7 +40,7 @@
 
     const image = document.createElement('img');
     image.src = item.image;
-    image.alt = 'Placeholder de ' + item.product.name + ' con armazón ' +
+    image.alt = 'Referencia mejorada con IA o SVG de demostración de ' + item.product.name + ' con armazón ' +
       item.frameLabel.toLowerCase() + ' y cristal ' + item.lensLabel.toLowerCase() + '.';
     image.width = 800;
     image.height = 600;
